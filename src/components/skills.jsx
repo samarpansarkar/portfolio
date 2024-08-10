@@ -2,11 +2,13 @@ import React from 'react';
 import { LuLightbulb } from "react-icons/lu";
 import tailwind from './icons/tailwind.svg';
 import mongo from './icons/mongodb.svg';
+import { projectData } from './../projectData';
+import ProjectList from './projectList';
 
 
 const skills = () => {
     return (
-        <div className='md:p-22 md:pt-24 p-8 flex justify-between md:pb-22 md:px-40 md:h-full select-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-[white] md:mt-0 mt-6 pt-16'>
+        <div className='md:p-22 md:pt-24 p-8 flex md:flex-col justify-between md:pb-22 md:px-40 md:h-full select-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-[white] md:mt-0 mt-6 pt-16'>
             <div className=''>
                 <div className='md:w-6/12'>
                     <div className='md:w-28 md:h-7 rounded-full w-20 h-5 bg-black md:px-1 space-x-3.5 mb-6'>
@@ -43,14 +45,13 @@ const skills = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='hidden lg:block'>
-                 <DotLottiePlayer
-                    src={Animation}
-                    autoplay
-                    loop
-                >
-                </DotLottiePlayer> 
-        </div> */}
+            <div className=' lg:block'>
+                {projectData.map((item) => (
+                    <div key={item.id} className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'><ProjectList name={item.name} image={item.image} liveLink={item.liveLink} githubLink={item.githubLink} stack={item.stack} /></div>
+                ))}
+
+
+            </div>
         </div >
     )
 }

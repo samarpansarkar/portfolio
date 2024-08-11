@@ -8,7 +8,7 @@ import ProjectList from './projectList';
 
 const skills = () => {
     return (
-        <div className='md:p-22 md:pt-24 p-8 flex md:flex-col justify-between md:pb-22 md:px-40 md:h-full select-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-[white] md:mt-0 mt-6 pt-16'>
+        <div className='md:p-22 md:pt-24  md:pb-22 md:px-40 md:h-full md:flex-row  md:mt-0 p-8 flex flex-col justify-between select-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-[white] mt-6 pt-16'>
             <div className=''>
                 <div className='md:w-6/12'>
                     <div className='md:w-28 md:h-7 rounded-full w-20 h-5 bg-black md:px-1 space-x-3.5 mb-6'>
@@ -17,7 +17,7 @@ const skills = () => {
                     </div>
                 </div>
                 <div>
-                    <h1 className='font-poppins text-4xl font-medium'>My <span className='bg-gradient-to-r from-[#833be7cb] to-[#5521c5] bg-clip-text text-transparent'>Technical</span><br className='md:block hidden' /> Experience/<span className='md:hidden block'> </span><span>Skills.</span></h1>
+                    <h1 className='font-poppins lg:text-4xl text-3xl font-medium'>My <span className='bg-gradient-to-r from-[#833be7cb] to-[#5521c5] bg-clip-text text-transparent'>Technical</span><br className='md:block hidden' /> Experience/<span className='md:hidden block'> </span><span>Skills.</span></h1>
                     <hr className='md:w-44 w-32 md:mb-0 mb-4 h-3 mt-3 md:ml-0 lg:mt-4 bg-gradient-to-r from-[#bf77eced] to-[#c580f0c8]'></hr>
                 </div>
                 <div>
@@ -45,12 +45,20 @@ const skills = () => {
                     </div>
                 </div>
             </div>
-            <div className=' lg:block'>
-                {projectData.map((item) => (
-                    <div key={item.id} className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'><ProjectList name={item.name} image={item.image} liveLink={item.liveLink} githubLink={item.githubLink} stack={item.stack} /></div>
-                ))}
-
-
+            <div className=' lg:block flex flex-col justify-center gap-8 mt-10'>
+                <div className='md:w-28 md:h-7 rounded-full w-20 h-5 bg-black md:px-1 space-x-3.5'>
+                    <LuLightbulb className='md:inline-block text-white font-semibold relative md:left-1.5 hidden scale-50 md:scale-100 md:-top-px' size={22} />
+                    <span className='text-white font-poppins text-xs md:text-xs font-normal md:font-medium relative md:-left-0 -left-0 md:-top-0 -top-1 md:pb-0'>My Projects</span>
+                </div>
+                <h1 className='font-poppins lg:text-4xl text-2xl font-medium'>My <span className='bg-gradient-to-r from-[#833be7cb] to-[#5521c5] bg-clip-text text-transparent'>Projects</span></h1>
+                <hr className='md:w-44 w-32 md:mb-0 mb-4 h-3 mt-3 md:ml-0 lg:mt-4 bg-gradient-to-r from-[#bf77eced] to-[#c580f0c8]'></hr>
+                <div className='flex justify-center items-center'>
+                    <div className='xl:grid xl:grid-cols-3 xl:gap-9  gap-4 mt-2'>
+                        {projectData.map((item) => (
+                            <ProjectList name={item.name} image={item.image} liveLink={item.liveLink} githubLink={item.githubLink} stack={item.stack} />
+                        ))}
+                    </div>
+                </div>
             </div>
         </div >
     )

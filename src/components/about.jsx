@@ -1,6 +1,7 @@
 import React from 'react';
-import { LuHome, LuUser, LuLightbulb, LuLayers, LuPhone, LuLanguages } from "react-icons/lu";
+import { LuUser, } from "react-icons/lu";
 import { GoDot } from "react-icons/go";
+import snakeGame from './icons/github-contribution-grid-snake.svg'
 
 const about = () => {
     return (
@@ -16,6 +17,9 @@ const about = () => {
                 </div>
                 <div className='md:w-12/12 md:mt-10 '>
                     <h1 className='font-poppins text-justify'>I am a Web & Android Developer from Suri, India. Currently I'm a freelancer, I put my time learning essentials from other fields as well. I am very comfortable with adapting to new software and new technologies. With a strong passion for innovation and a keen eye for detail, I'm confident in my ability to collaborate with cross-functional teams, drive projects forward, and deliver high-quality results. </h1>
+                </div>
+                <div className='hidden md:block w-auto'>
+                    <img src={snakeGame} />
                 </div>
             </div>
             <div className='relative md:-left-0 -left-28 md:pt-4 pt-12'>

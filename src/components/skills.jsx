@@ -4,6 +4,7 @@ import tailwind from './icons/tailwind.svg';
 import mongo from './icons/mongodb.svg';
 import { projectData } from './../projectData';
 import ProjectList from './projectList';
+import sideImg from './icons/manWithAComputer.gif'
 
 
 const skills = () => {
@@ -23,29 +24,32 @@ const skills = () => {
                 <div>
                     <div>
                         <h1 className='md:font-semibold font-bold md:text-2xl md:pt-2 md:inline-block md:mr-5 md:mb-0 mb-1'>Web Dev</h1>
-                        <img src="https://skillicons.dev/icons?i=react" alt="react" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-2 md:mb-0 mb-2 md:mt-0 mt-2' />
-                        <img src="https://skillicons.dev/icons?i=next" alt="next" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-2 md:mb-0 mb-2 md:mt-0 mt-2' />
-                        <img src={tailwind} alt="tailwind" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2' />
-                        <img src={mongo} alt="mongodb" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-0.5 mr-2' />
-                        <img src='https://skillicons.dev/icons?i=html' alt="html5" style={{ width: 45, height: 45 }} className='mr-2 inline md:pb-3 md:mr-1' />
-                        <img src='https://skillicons.dev/icons?i=nodejs' alt="html5" style={{ width: 45, height: 45 }} className='mr-2 inline md:pb-3 md:mr-1' />
-                        <img src='https://skillicons.dev/icons?i=js' alt="js" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1 md:mt-0 ' />
-                        <img src='https://skillicons.dev/icons?i=mysql' alt="mysql" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1 md:mt-0' />
+                        <img src="https://skillicons.dev/icons?i=react" alt="react" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-2 md:mb-0 mb-2 md:mt-0 mt-2 hover:scale-110' />
+                        <img src="https://skillicons.dev/icons?i=next" alt="next" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-2 md:mb-0 mb-2 md:mt-0 mt-2 hover:scale-110' />
+                        <img src={tailwind} alt="tailwind" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2 hover:scale-110' />
+                        <img src={mongo} alt="mongodb" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-0.5 mr-2 hover:scale-110' />
+                        <img src='https://skillicons.dev/icons?i=html' alt="html5" style={{ width: 45, height: 45 }} className='mr-2 inline md:pb-3 md:mr-1 hover:scale-110' />
+                        <img src='https://skillicons.dev/icons?i=nodejs' alt="html5" style={{ width: 45, height: 45 }} className='mr-2 inline md:pb-3 md:mr-1 hover:scale-110' />
+                        <img src='https://skillicons.dev/icons?i=js' alt="js" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1 md:mt-0 hover:scale-110' />
+                        <img src='https://skillicons.dev/icons?i=mysql' alt="mysql" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1 md:mt-0 hover:scale-110' />
                     </div>
                     <div>
                         <h1 className='md:font-semibold font-bold md:text-2xl md:pt-1.5 md:inline-block md:mr-5 md:mb-0 mb-2.5 md:mt-0 mt-2'>Languages</h1>
-                        <img src='https://skillicons.dev/icons?i=c' alt="c" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2' />
-                        <img src='https://skillicons.dev/icons?i=python&theme=dark' alt="python" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1' />
-                        <img src='https://skillicons.dev/icons?i=java&theme=light' alt="java" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1' />
+                        <img src='https://skillicons.dev/icons?i=c' alt="c" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2 hover:scale-110' />
+                        <img src='https://skillicons.dev/icons?i=python&theme=dark' alt="python" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1 hover:scale-110' />
+                        <img src='https://skillicons.dev/icons?i=java&theme=light' alt="java" style={{ width: 45, height: 45 }} className='inline md:pb-3 mr-2 md:mr-1 hover:scale-110' />
                     </div>
                     <div>
                         <h1 className='md:font-semibold font-bold md:text-2xl md:pt-1.5 md:inline-block md:mr-5 md:mb-0 mb-2 md:mt-0 mt-2'>Others Skills</h1>
-                        <img src='https://skillicons.dev/icons?i=git' alt="git" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2' />
-                        <img src='https://skillicons.dev/icons?i=github' alt="github" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2' />
+                        <img src='https://skillicons.dev/icons?i=git' alt="git" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2 hover:scale-110' />
+                        <img src='https://skillicons.dev/icons?i=github' alt="github" style={{ width: 45, height: 45 }} className='inline md:pb-3 md:mr-1 mr-2 hover:scale-110' />
+                    </div>
+                    <div className='hidden md:block w-96'>
+                        <img src={sideImg} />
                     </div>
                 </div>
             </div>
-            <div className=' lg:block flex flex-col justify-center gap-8 mt-10'>
+            <div className='flex flex-col justify-center gap-8 mt-10 md:mt-0 md:block'>
                 <div className='md:w-28 md:h-7 rounded-full w-20 h-5 bg-black md:px-1 space-x-3.5'>
                     <LuLightbulb className='md:inline-block text-white font-semibold relative md:left-1.5 hidden scale-50 md:scale-100 md:-top-px' size={22} />
                     <span className='text-white font-poppins text-xs md:text-xs font-normal md:font-medium relative md:-left-0 -left-0 md:-top-0 -top-1 md:pb-0'>My Projects</span>

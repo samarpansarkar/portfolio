@@ -2,7 +2,8 @@ import React from 'react';
 import { FaXTwitter } from "react-icons/fa6";
 import { LuLinkedin, LuInstagram, LuFacebook } from "react-icons/lu";
 import Resume from './resume';
-import Github from "./github"
+import Github from "./github";
+import Login from "./login";
 import profilePic from '../components/icons/picofme (3).png'
 
 
@@ -44,7 +45,10 @@ const content = () => {
       <div className='hidden lg:inline-block md:h-fit md:w-5/12 relative md:mr-32 md:mt-16'>
         <img className='mt-10' src={profilePic} alt='profile pic' />
       </div>
-      <Github />
+      <div className='flex  justify-between gap-10'>
+        <Github />
+        <Login />
+      </div>
     </div>
   )
 }

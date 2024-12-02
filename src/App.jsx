@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import About from "./components/about";
 import Skills from "./components/skills"
 import Contact from "./components/contact";
+import LoginPage from "./components/LoginPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/about' Component={About} />
           <Route path='/skills&projects' Component={Skills} />
           <Route path='/contact' Component={Contact} />
+          <Route path='/login' Component={LoginPage} />
           <Route path='*' component={() => <h1>404 Not Found</h1>} />
         </Routes>
       </BrowserRouter>

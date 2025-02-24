@@ -28,6 +28,14 @@ export const projectData = [
         githubLink: "https://github.com/samarpansarkar/MERN-foodApp",
         liveLink: "https://mern-food-app-one.vercel.app/"
     },
+    {
+        id: 4,
+        name: "BookMyStay",
+        image: foodOrderAppImg,
+        stack: ["MERN stack"],
+        githubLink: "https://github.com/samarpansarkar/BookMyStay",
+        liveLink: "https://book-my-stay-samarpan-sarkars-projects.vercel.app/"
+    },
     // {
     //     id: 4,
     //     name: "Movie Database",

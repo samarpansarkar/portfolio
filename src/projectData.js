@@ -1,7 +1,7 @@
 import protfolioImg from './components/icons/portfolio.png'
 import recipeAppImg from './components/icons/recipeApp.png'
 import foodOrderAppImg from './components/icons/foodOrderApp.png'
-import BookMyStayImg from './components/icons/BookMyStay.png'
+import BookMyStayImg from './components/icons/BookMyStay.PNG'
 
 
 export const projectData = [

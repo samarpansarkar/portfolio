@@ -1,6 +1,7 @@
 import protfolioImg from './components/icons/portfolio.png'
 import recipeAppImg from './components/icons/recipeApp.png'
 import foodOrderAppImg from './components/icons/foodOrderApp.png'
+import BookMyStayImg from './components/icons/BookMyStay.png'
 
 
 export const projectData = [
@@ -31,7 +32,7 @@ export const projectData = [
     {
         id: 4,
         name: "BookMyStay",
-        image: foodOrderAppImg,
+        image: BookMyStayImg,
         stack: ["MERN stack"],
         githubLink: "https://github.com/samarpansarkar/BookMyStay",
         liveLink: "https://book-my-stay-samarpan-sarkars-projects.vercel.app/"

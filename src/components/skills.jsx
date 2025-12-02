@@ -35,12 +35,12 @@ const Skills = () => {
 
     const SkillSection = ({ title, skills }) => (
         <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-slate-300 border-l-4 border-accent-primary pl-3">{title}</h3>
+            <h3 className="text-xl font-semibold text-text-secondary border-l-4 border-accent-primary pl-3">{title}</h3>
             <div className="flex flex-wrap gap-4">
                 {skills.map((skill, index) => (
                     <div key={index} className="group relative">
                         <div className="absolute -inset-0.5 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-lg blur opacity-20 group-hover:opacity-75 transition duration-500"></div>
-                        <div className="relative bg-slate-800 rounded-lg p-3 hover:scale-110 transition-transform duration-300">
+                        <div className="relative bg-card-bg rounded-lg p-3 hover:scale-110 transition-transform duration-300 border border-slate-700/10">
                             <img src={skill.icon} alt={skill.name} className="w-10 h-10 object-contain" />
                         </div>
                     </div>
@@ -50,7 +50,7 @@ const Skills = () => {
     );
 
     if (loading) {
-        return <div className="text-white text-center py-20">Loading...</div>;
+        return <div className="text-text-primary text-center py-20">Loading...</div>;
     }
 
     // Group skills by category
@@ -66,7 +66,7 @@ const Skills = () => {
                     <div className="p-3 bg-accent-primary/10 rounded-full">
                         <LuLightbulb className="text-accent-primary" size={24} />
                     </div>
-                    <h2 className="text-4xl font-bold text-white">
+                    <h2 className="text-4xl font-bold text-text-primary">
                         Technical <span className="text-accent-secondary">Skills</span>
                     </h2>
                 </div>
@@ -97,7 +97,7 @@ const Skills = () => {
                         <div className="p-3 bg-accent-secondary/10 rounded-full">
                             <LuLightbulb className="text-accent-secondary" size={24} />
                         </div>
-                        <h2 className="text-4xl font-bold text-white">
+                        <h2 className="text-4xl font-bold text-text-primary">
                             Featured <span className="text-accent-primary">Projects</span>
                         </h2>
                     </div>
@@ -110,7 +110,7 @@ const Skills = () => {
                                 onClick={() => setFilter(cat)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${filter === cat
                                     ? 'bg-accent-primary text-white shadow-lg shadow-accent-primary/25'
-                                    : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white'
+                                    : 'bg-card-bg text-text-secondary hover:bg-accent-primary/10 hover:text-accent-primary border border-slate-700/10'
                                     }`}
                             >
                                 {cat}
@@ -121,7 +121,7 @@ const Skills = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredProjects.map((item, index) => (
-                        <div key={item._id} className="group relative rounded-xl overflow-hidden bg-slate-800/50 border border-slate-700/50 hover:border-accent-primary/50 transition-all duration-300 hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                        <div key={item._id} className="group relative rounded-xl overflow-hidden bg-card-bg border border-slate-700/10 hover:border-accent-primary/50 transition-all duration-300 hover:-translate-y-2 animate-fade-in-up shadow-lg shadow-slate-900/5" style={{ animationDelay: `${index * 100}ms` }}>
                             <div className="aspect-video overflow-hidden">
                                 <img
                                     src={item.image}
@@ -132,14 +132,14 @@ const Skills = () => {
 
                             <div className="p-6 space-y-4">
                                 <div className="flex justify-between items-start">
-                                    <h3 className="text-xl font-bold text-white group-hover:text-accent-primary transition-colors">
+                                    <h3 className="text-xl font-bold text-text-primary group-hover:text-accent-primary transition-colors">
                                         {item.name}
                                     </h3>
-                                    <span className="text-xs font-medium px-2 py-1 rounded bg-slate-700 text-slate-300">
+                                    <span className="text-xs font-medium px-2 py-1 rounded bg-bg-secondary text-text-secondary">
                                         {item.category}
                                     </span>
                                 </div>
-                                <p className="text-sm text-slate-400 font-mono bg-slate-900/50 p-2 rounded">
+                                <p className="text-sm text-text-secondary font-mono bg-bg-secondary p-2 rounded">
                                     {item.stack.join(', ')}
                                 </p>
 
@@ -156,7 +156,7 @@ const Skills = () => {
                                         href={item.githubLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 text-center py-2 rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
+                                        className="flex-1 text-center py-2 rounded-lg border border-slate-600/20 text-text-secondary hover:bg-bg-secondary hover:text-text-primary transition-colors"
                                     >
                                         GitHub
                                     </a>

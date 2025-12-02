@@ -6,33 +6,76 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #ec4899;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
+  /* Light Mode */
+  --bg-primary: #f8fafc; /* Slate 50 */
+  --bg-secondary: #f1f5f9; /* Slate 100 */
+  --text-primary: #1e293b; /* Slate 800 - Darker for better contrast */
+  --text-secondary: #475569; /* Slate 600 */
+  --accent-primary: #6366f1; /* Indigo 500 */
+  --accent-secondary: #ec4899; /* Pink 500 */
+  --card-bg: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* More opaque white for better readability */
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --gradient-text: linear-gradient(
+    to right,
+    #4f46e5,
+    #db2777
+  ); /* Slightly darker gradient for text */
+  --gradient-bg: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e0f2fe 100%
+  ); /* Softer background gradient */
+}
+
+[data-theme="dark"] {
+  /* Dark Mode */
+  --bg-primary: #0f172a; /* Slate 900 */
+  --bg-secondary: #1e293b; /* Slate 800 */
+  --text-primary: #f8fafc; /* Slate 50 */
+  --text-secondary: #cbd5e1; /* Slate 300 */
+  --accent-primary: #818cf8; /* Indigo 400 */
+  --accent-secondary: #f472b6; /* Pink 400 */
+  --card-bg: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+  --nav-bg: rgba(15, 23, 42, 0.7);
+  --gradient-text: linear-gradient(to right, #818cf8, #f472b6);
+  --gradient-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 body {
-  background-color: var(--bg-primary);
+  background: var(--gradient-bg);
+  background-attachment: fixed; /* Parallax-like effect */
   color: var(--text-primary);
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .glass-nav {
-    background: rgba(15, 23, 42, 0.7);
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

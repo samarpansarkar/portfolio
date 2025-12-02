@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { LuHouse, LuUser, LuLightbulb, LuPhone, LuMenu, LuX, LuLock } from "react-icons/lu";
+import { LuHouse, LuUser, LuLightbulb, LuPhone, LuMenu, LuX, LuLock, LuSun, LuMoon } from "react-icons/lu";
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const { theme, toggleTheme } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,15 +48,31 @@ const Navbar = () => {
                             <span>{link.label}</span>
                         </Link>
                     ))}
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-full hover:bg-white/10 transition-colors text-slate-400 hover:text-white"
+                        aria-label="Toggle Theme"
+                    >
+                        {theme === 'dark' ? <LuSun size={20} /> : <LuMoon size={20} />}
+                    </button>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
-                    onClick={() => setNav(!nav)}
-                >
-                    {nav ? <LuX size={24} /> : <LuMenu size={24} />}
-                </button>
+                <div className="md:hidden flex items-center space-x-4">
+                    <button
+                        onClick={toggleTheme}
+                        className="p-2 rounded-full hover:bg-white/10 transition-colors text-slate-400 hover:text-white"
+                        aria-label="Toggle Theme"
+                    >
+                        {theme === 'dark' ? <LuSun size={20} /> : <LuMoon size={20} />}
+                    </button>
+                    <button
+                        className="text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+                        onClick={() => setNav(!nav)}
+                    >
+                        {nav ? <LuX size={24} /> : <LuMenu size={24} />}
+                    </button>
+                </div>
 
                 {/* Mobile Drawer */}
                 <div className={`fixed inset-y-0 right-0 w-64 bg-slate-900/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out border-l border-white/10 ${nav ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>

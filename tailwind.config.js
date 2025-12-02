@@ -4,10 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        "bg-primary": "#0f172a",
-        "bg-secondary": "#1e293b",
-        "accent-primary": "#8b5cf6",
-        "accent-secondary": "#ec4899",
+        "bg-primary": "var(--bg-primary)",
+        "bg-secondary": "var(--bg-secondary)",
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "accent-primary": "var(--accent-primary)",
+        "accent-secondary": "var(--accent-secondary)",
+        "card-bg": "var(--card-bg)",
+      },
+      backgroundImage: {
+        "gradient-text": "var(--gradient-text)",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

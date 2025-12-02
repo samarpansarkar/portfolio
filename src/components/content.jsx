@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { FaXTwitter } from "react-icons/fa6";
 import { LuLinkedin, LuInstagram, LuFacebook } from "react-icons/lu";
@@ -5,68 +7,71 @@ import Resume from "./resume";
 import Github from "./github";
 import profilePic from "../components/icons/picofme (3).png";
 
-const content = () => {
+const Content = () => {
   return (
-    <div className='md:w-full flex justify-between bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-[white] md:mt-0 mt-6'>
-      <div className='min-h-screen md:px-36 md:py-16 md:pb-4 px-8 py-12 bg-[white] select-none md:w-6/12 md:pr-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]'>
-        <div className='text-center'>
-          {/* <h1 className='text-left md:px-2 md:pb-2 px-3 font-normal text-2xl font-poppins text-black'>My Name is</h1> */}
-          <br />
-          <h1 className='text-left font-medium text-7xl md:text-8xl font-rubix bg-gradient-to-r from-[#833be7cb] to-[#5521c5] bg-clip-text text-transparent'>
+    <div className="flex flex-col md:flex-row items-center justify-between min-h-[calc(100vh-100px)]">
+      {/* Text Section */}
+      <div className="w-full md:w-1/2 space-y-8 text-center md:text-left animate-fade-in-up">
+        <div className="space-y-2">
+          <h2 className="text-xl md:text-2xl font-medium text-accent-primary tracking-wide">
+            Hello, I'm
+          </h2>
+          <h1 className="text-5xl md:text-7xl font-bold font-rubik bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
             Samarpan
-          </h1>
-          <h1 className='text-left md:pb-6 pt-2 md:pt-0 pb-7 leading-10 font-semibold text-6xl md:text-7xl font-rubix'>
-            Sarkar
-          </h1>
-          <hr className='md:w-24 w-20 md:mb-0 mb-4 h-3 bg-gradient-to-r from-[#c580f0ed] to-[#c580f0c8]'></hr>
-        </div>
-        <div className='text-[rgb(15,23,42)] text-center'>
-          <h1 className='text-left md:pt-8 text-2xl font-poppins font-normal'>
-            I am a Passionate
-            <span className='text-left md:pt-8 text-3xl font-semibold font-rubix'>
-              {" "}
-              Software Engineer. <br></br>Web & Android Developer.
-            </span>
+            <br />
+            <span className="text-accent-secondary">Sarkar</span>
           </h1>
         </div>
-        <div className='flex md:p-6 pt-4 space-x-2.5 w-full md:pt-8 md:pb-8'>
-          <a
-            className='pl-2 h-10 w-10 text-center border pt-2 rounded-md border-black hover:bg-[#c580f023] transition-all duration-500 active:bg-zinc-300'
-            href='https://x.com/Samarpan_209'
-            target='_blank'>
-            <FaXTwitter size={23} />
-          </a>
-          <a
-            className='pl-2 h-10 w-10 text-center border pt-2 rounded-md border-black hover:bg-[#c580f023] transition-all duration-500 active:bg-zinc-300'
-            href='https://www.linkedin.com/in/samarpan-sarkar-'
-            target='_blank'>
-            <LuLinkedin size={23} />
-          </a>
-          <a
-            className='pl-2 h-10 w-10 text-center border pt-2 rounded-md border-black hover:bg-[#c580f023] transition-all duration-500 active:bg-zinc-300'
-            href='https://www.instagram.com/samarpan_209/'
-            target='_blank'>
-            <LuInstagram size={23} />
-          </a>
-          <a
-            className='pl-2 h-10 w-10 text-center border pt-2 rounded-md border-black hover:bg-[#c580f023] transition-all duration-500 active:bg-zinc-300'
-            href='https://www.facebook.com/samrpan.sarkar/'
-            target='_blank'>
-            <LuFacebook size={23} />
-          </a>
+
+        <div className="space-y-4">
+          <h3 className="text-2xl md:text-3xl font-semibold text-slate-200">
+            Passionate Software Engineer
+          </h3>
+          <p className="text-lg text-slate-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
+            Specializing in Web & Android Development. Building digital experiences that merge functionality with premium aesthetics.
+          </p>
         </div>
-        <div>
+
+        <div className="flex justify-center md:justify-start gap-4">
+          {[
+            { icon: <FaXTwitter size={20} />, href: 'https://x.com/Samarpan_209' },
+            { icon: <LuLinkedin size={20} />, href: 'https://www.linkedin.com/in/samarpan-sarkar-' },
+            { icon: <LuInstagram size={20} />, href: 'https://www.instagram.com/samarpan_209/' },
+            { icon: <LuFacebook size={20} />, href: 'https://www.facebook.com/samrpan.sarkar/' }
+          ].map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full border border-slate-700 text-slate-400 hover:text-white hover:border-accent-primary hover:bg-accent-primary/10 transition-all duration-300 hover:-translate-y-1"
+            >
+              {social.icon}
+            </a>
+          ))}
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
           <Resume />
+          <Github />
         </div>
       </div>
-      <div className='hidden lg:inline-block md:h-fit md:w-5/12 relative md:mr-32 md:mt-16'>
-        <img className='mt-10' src={profilePic} alt='profile pic' />
-      </div>
-      <div className='flex  justify-between gap-10'>
-        <Github />
+
+      {/* Image Section */}
+      <div className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end relative">
+        <div className="relative w-72 h-72 md:w-96 md:h-96">
+          {/* Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary to-accent-secondary rounded-full blur-3xl opacity-20 animate-pulse"></div>
+
+          <img
+            src={profilePic}
+            alt="Samarpan Sarkar"
+            className="relative w-full h-full object-cover rounded-full border-2 border-slate-700/50 shadow-2xl hover:scale-105 transition-transform duration-500"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default content;
+export default Content;

@@ -1,47 +1,89 @@
 import React from 'react';
-import { LuUser, } from "react-icons/lu";
-import { GoDot } from "react-icons/go";
-import snakeGame from './icons/github-contribution-grid-snake.svg'
+import { LuUser } from "react-icons/lu";
+import { GoDotFill } from "react-icons/go";
+import snakeGame from './icons/github-contribution-grid-snake.svg';
+import Experience from './Experience';
 
-const about = () => {
+const About = () => {
     return (
-        <div className='md:p-22 md:pt-24 md:pb-22 md:px-40 md:h-full select-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] bg-[white] p-8 md:flex justify-normal space-x-28 md:mt-0 mt-6 pt-16'>
-            <div className='md:w-6/12'>
-                <div className='md:w-28 md:h-7 rounded-full w-20 h-5 bg-black md:px-1 space-x-3.5 mb-6'>
-                    <LuUser className='md:inline-block text-white font-semibold relative md:left-1.5 hidden scale-50 md:scale-100' size={22} />
-                    <span className='text-white font-poppins text-xs md:text-xs font-normal md:font-medium relative md:-left-0 -left-1 md:-top-0 -top-1 md:pb-0 pb-2 md:pt-0'>About me</span>
+        <div className="min-h-[calc(100vh-100px)] py-12 space-y-20 animate-fade-in-up">
+            <div className="flex flex-col md:flex-row gap-12 items-start justify-center">
+                {/* Left Column */}
+                <div className="w-full md:w-1/2 space-y-8">
+                    <div className="inline-flex items-center space-x-2 px-4 py-2 bg-slate-800/50 rounded-full border border-slate-700">
+                        <LuUser className="text-accent-primary" size={18} />
+                        <span className="text-sm font-medium text-slate-300">About Me</span>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                            Web & Android <br />
+                            <span className="bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent">
+                                Developer
+                            </span>
+                            <br />
+                            <span className="text-2xl md:text-3xl font-normal text-slate-400">
+                                Based in India.
+                            </span>
+                        </h1>
+                        <div className="h-1 w-24 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full"></div>
+                    </div>
+
+                    <p className="text-lg text-slate-400 leading-relaxed text-justify">
+                        I am a Web & Android Developer from Suri, India. Currently freelancing, I dedicate my time to mastering new technologies and adapting to the ever-evolving tech landscape. With a strong passion for innovation and a keen eye for detail, I thrive in collaborative environments and am committed to delivering high-quality, impactful digital solutions.
+                    </p>
+
+                    <div className="hidden md:block p-4 bg-slate-800/30 rounded-xl border border-slate-700/50 hover:border-accent-primary/50 transition-colors">
+                        <img src={snakeGame} alt="GitHub Contributions" className="w-full opacity-80 hover:opacity-100 transition-opacity" />
+                    </div>
                 </div>
-                <div className='md:pt-5'>
-                    <h1 className='md:text-5xl text-4xl md:font-medium font-semibold'>Web & Android <br className='md:hidden' /><span className='bg-gradient-to-r from-[#833be7cb] to-[#5521c5] bg-clip-text text-transparent md:w-48'>Developer </span><br /> <span className='md:text-4xl text-3xl font-poppins font-normal md:font-medium'>Based In India.</span></h1>
-                    <hr className='md:w-44 w-32 md:mb-0 mb-4 h-3 mt-3 md:ml-0 lg:mt-4 bg-gradient-to-r from-[#c580f0ed] to-[#c580f0c8]'></hr>
-                </div>
-                <div className='md:w-12/12 md:mt-10 '>
-                    <h1 className='font-poppins text-justify'>I am a Web & Android Developer from Suri, India. Currently I'm a freelancer, I put my time learning essentials from other fields as well. I am very comfortable with adapting to new software and new technologies. With a strong passion for innovation and a keen eye for detail, I'm confident in my ability to collaborate with cross-functional teams, drive projects forward, and deliver high-quality results. </h1>
-                </div>
-                <div className='hidden md:block w-auto'>
-                    <img src={snakeGame} />
+
+                {/* Right Column */}
+                <div className="w-full md:w-1/3 space-y-10 bg-slate-800/20 p-8 rounded-2xl border border-slate-700/30 backdrop-blur-sm">
+                    {/* Languages */}
+                    <div className="space-y-4">
+                        <h3 className="text-2xl font-semibold text-white">Languages</h3>
+                        <div className="h-0.5 w-full bg-slate-700/50"></div>
+                        <ul className="space-y-3">
+                            {['English', 'Hindi', 'Bengali'].map((lang) => (
+                                <li key={lang} className="flex items-center space-x-3 text-slate-300 hover:text-accent-primary transition-colors">
+                                    <GoDotFill className="text-accent-secondary" size={12} />
+                                    <span className="text-lg">{lang}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Nationality */}
+                    <div className="space-y-4">
+                        <h3 className="text-2xl font-semibold text-white">Nationality</h3>
+                        <div className="h-0.5 w-full bg-slate-700/50"></div>
+                        <div className="flex items-center space-x-3 text-slate-300 hover:text-accent-primary transition-colors">
+                            <GoDotFill className="text-accent-secondary" size={12} />
+                            <span className="text-lg">Indian</span>
+                        </div>
+                    </div>
+
+                    {/* Hobbies */}
+                    <div className="space-y-4">
+                        <h3 className="text-2xl font-semibold text-white">Hobbies</h3>
+                        <div className="h-0.5 w-full bg-slate-700/50"></div>
+                        <ul className="space-y-3">
+                            {['Project Building', 'Coding', 'Tech Exploration'].map((hobby) => (
+                                <li key={hobby} className="flex items-center space-x-3 text-slate-300 hover:text-accent-primary transition-colors">
+                                    <GoDotFill className="text-accent-secondary" size={12} />
+                                    <span className="text-lg">{hobby}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div className='relative md:-left-0 -left-28 md:pt-4 pt-12'>
-                <div className='md:w-96'>
-                    <h1 className='text-3xl font-poppins font-medium md:ml-10'>Languages</h1>
-                    <hr className='md:w-64 w-32 md:mb-0 mb-2 md:h-1 h-1 mt-3 md:ml-10 lg:mt-1 bg-gradient-to-r from-[#c580f0ed] to-[#c580f0c8]'></hr>
-                    <h1 className='md:mt-5 mt-3 md:ml-2 font-poppins'><GoDot className='inline' /><span className='md:pl-12  text-xl pl-4'>English</span></h1>
-                    <h1 className='md:mt-2 md:ml-2 font-poppins'><GoDot className='inline' /><span className='md:pl-12 text-xl pl-4'>Hindi</span></h1>
-                    <h1 className='md:mt-2 md:ml-2 font-poppins mb-2'><GoDot className='inline' /><span className='md:pl-12 text-xl pl-4'>Bengali</span></h1>
-                </div>
-                <div className='md:mt-3'>
-                    <h1 className='text-3xl font-poppins font-medium md:ml-10 md:mt-0 mt-5'>Nationality</h1>
-                    <hr className='md:w-64 w-32 md:mb-0 mb-4 md:h-1 h-1 mt-3 md:ml-10 lg:mt-1 bg-gradient-to-r from-[#c580f0ed] to-[#c580f0c8]'></hr>
-                    <h1 className='md:mt-4 md:ml-2 font-poppins'><GoDot className='inline' /><span className='md:pl-12 text-xl pl-4'>Indian</span></h1>
-                </div>
-                <div className='md:mt-4'>
-                    <h1 className='text-3xl font-poppins font-medium md:ml-10 md:mt-0 mt-5'>Hobbies</h1>
-                    <hr className='md:w-64 w-32 md:mb-0 mb-4 md:h-1 h-1 mt-3 md:ml-10 lg:mt-1 bg-gradient-to-r from-[#c580f0ed] to-[#c580f0c8]'></hr>
-                    <h1 className='md:mt-5 md:ml-2 font-poppins'><GoDot className='inline' /><span className='md:pl-3 text-xl pl-4'>Project <span>Building</span></span><br className='md:hidden' /><GoDot className='md:inline md:ml-4  inline' /><span className='md:pl-4 text-xl md-inline inline md:ml-0 ml-4'>Coding</span></h1>
-                </div>
-            </div>
+
+            {/* Experience Section */}
+            <Experience />
         </div>
-    )
+    );
 }
-export default about;
+
+export default About;
